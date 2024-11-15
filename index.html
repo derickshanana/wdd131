@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Derick Shanana">
+  <meta name="author" content="Derick Shanana">
+  <title>WDD 131 - Dynamic Web Fundamentals - Derick Shanana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+  <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-    <h1>WDD 131 - DERICK</h1>
+  <header>
+    <h1>WDD 131: Dynamic Web Fundamentals - Derick Shanana</h1>
+    <nav>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/derick-shanana-bb028b280" target="_blank">LinkedIn</a></li>
+        <li><a href="https://byui.instructure.com/" target="_blank">I-Learn</a></li>
+        <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?id=p41&lang=eng#p41" target="_blank">Scripture</a></li>
+        <li><a href="#" target="_blank">Final Project</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-me card">
+      <h2>About Me</h2>
+      <p>
+        My name is Derick Shanana, and I live in Bulawayo, Zimbabwe. I love spending time with my family. I enjoy studying the scriptures 
+        and pondering on the teachings of the living prophet. I attend church every Sunday and am currently a student at BYU.
+      </p>
+      <img src="images/profile.jpg" alt="Profile picture">
+    </section>
+
+    <section class="country-info card">
+      <h2>Victoria Falls, Zimbabwe</h2>
+      <p>
+        Victoria Falls, located on the Zambezi River between Zimbabwe and Zambia, is the world’s largest waterfall by combined width (1,708 meters) and height (108 meters). Known locally as **"Mosi-oa-Tunya"** or "The Smoke That Thunders," its mist can rise over 400 meters and be seen from miles away. Discovered by David Livingstone in 1855 and named after Queen Victoria, the falls are a UNESCO World Heritage Site and one of the Seven Natural Wonders of the World. Surrounding the falls is a unique rainforest ecosystem supported by its constant spray, with diverse wildlife including elephants, baboons, and hundreds of bird species. Visitors can experience thrilling activities like bungee jumping, whitewater rafting, and swimming in the Devil's Pool at the edge of the falls. During a full moon, a rare "moonbow" can be seen, adding to its allure as one of the worlds most breathtaking natural wonders.
+      </p>
+      <img src="images/vf.png" alt="Victoria Falls">
+    </section>
+
+    <aside class="web-resources card">
+      <h2>Web Dev Resources</h2>
+      <ul>
+        <li><a href="https://dev.to" target="_blank">Dev.to Community</a></li>
+        <li><a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
+        <li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
+        <li><a href="https://www.w3schools.com/" target="_blank">W3 Schools</a></li>
+        <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© <span id="currentyear"></span> Derick Shanana, Bulawayo, Zimbabwe</p>
+    <p id="lastModified"></p>
+  </footer>
 </body>
 </html>
+
