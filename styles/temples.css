@@ -1,0 +1,129 @@
+/* General styles for mobile-first design */
+:root {
+    /* change the values below to your colors from your palette */
+    --primary-color: #2596be;
+    --secondary-color: #041014;
+    --accent1-color: #EE1A10;
+    --accent2-color: #d2c9b8;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    line-height: 1.6;
+    background-color: #2596be;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    grid-template-columns: 150px auto;
+    background-color: #b3ccd9;
+    color: #041014;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    max-width: auto;
+    font-weight: 800;
+}
+
+/* Show navigation menu when toggled */
+nav ul.show {
+    display: block;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: none;
+    /* Hide menu by default */
+}
+
+nav ul li {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    float: left;
+    text-align: center;
+    padding: 35px;
+    font-size: 18px;
+    color: #041014;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #EE1A10;
+    font-size: 18px;
+}
+
+/* Current/active navbar link */
+.active {
+    background-color: #2596be;
+}
+
+/* Hamburger menu button styles */
+#hamburger {
+    display: block;
+    /* Show hamburger button */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #041014;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#home-msg {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#home-msg h1 {
+    text-align: center;
+    font-size: 22px;
+    color: #041014;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    grid-column: (10, 1fr);
+    /* Default to single column layout */
+    grid-row: 4/9;
+    gap: 20px;
+}
+
+figure {
+    text-align: center;
+    border: 10px #d2c9b8;
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #d2c9b8;
+    margin: 10px 0;
+}
+
+figure:hover {
+    opacity: .6;
+    transform: scale(1.1);
+}
+
+figcaption {
+    font-style: italic;
+    font-weight: bold;
+    color: #041014;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #b3ccd9;
+    min-width: auto;
+    font-weight: bold;
+}

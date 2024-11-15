@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav ul {
+        display: flex;
+    }
+    
+}
