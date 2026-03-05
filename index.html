@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD131</title>
+    <title>WDD 131 – Dynamic Web Fundamentals – Derick Shanana</title>
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals – Derick Shanana – A course landing page covering HTML, CSS, JavaScript, and modern web development techniques.">
+    <meta name="author" content="Derick Shanana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="styles/base.css" rel="stylesheet">
+    <script src="scripts/getdates.js" defer></script>
 </head>
+
 <body>
-    <h1>WDD131-Derick</h1>
+    <header>
+        <div class="header-inner">
+            <span id="course-title" class="logo-text">WDD 131 – Dynamic Web Fundamentals</span>
+            <nav class="navigation">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a>
+                <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7"
+                    target="_blank" rel="noopener">Scripture</a>
+                <a href="project/index.html">Final Project</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Derick Shanana</h1>
+
+        <div class="cards-grid">
+            <section class="card">
+                <h2>About Me</h2>
+                <img src="images/profiles.jpg" alt="Derick Shanana 
+                ">
+                <p>Hello! I'm Derick Shanana, a passionate web development student from Bulawayo, Zimbabwe. I'm enrolled
+                    in WDD 131 – Dynamic Web Fundamentals at BYU-Pathway Worldwide, where I am learning to build modern,
+                    accessible, and engaging websites using HTML, CSS, and JavaScript.</p>
+                <p>I love technology, problem-solving, and creating things that make a difference in people's lives.
+                    Through this course, I aim to sharpen my skills and grow as a developer.</p>
+            </section>
+
+            <section class="card">
+                <h2>Course Goals</h2>
+                <img src="images/webdev.jpg" alt="Web development workspace with code on screen">
+                <p>In WDD 131, I will learn to design and develop dynamic, responsive web pages. I will practice using
+                    semantic HTML, modern CSS layout techniques like Flexbox and Grid, and JavaScript to add
+                    interactivity and life to my pages.</p>
+                <p>By the end of this course, I plan to have a strong foundation in front-end web development and a
+                    portfolio of projects to showcase my growth and creativity.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="currentyear"></span> &nbsp;|&nbsp; Derick Shanana &nbsp;|&nbsp; Bulawayo, Zimbabwe
+        </p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
+
 </html>
