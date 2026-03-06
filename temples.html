@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album – WDD 131 – Derick Shanana</title>
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals – Derick Shanana – A responsive temple picture album showcasing Latter-day Saint temples around the world.">
+    <meta name="author" content="Derick Shanana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="styles/temples.css" rel="stylesheet">
+    <link href="styles/temples-large.css" rel="stylesheet" media="(min-width: 640px)">
+    <script src="scripts/temples.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <span class="site-title">Temple Album</span>
+            <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+            <nav id="main-nav" class="navigation hidden">
+                <a href="index.html">Home</a>
+                <a href="#" data-filter="all">All</a>
+                <a href="#" data-filter="old">Old</a>
+                <a href="#" data-filter="new">New</a>
+                <a href="#" data-filter="large">Large</a>
+                <a href="#" data-filter="small">Small</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Temples of The Church of Jesus Christ</h1>
+
+        <div id="gallery" class="gallery">
+            <figure data-built="1893" data-area="253000">
+                <img src="images/salt-lake.jpg" alt="Salt Lake Temple in Utah" loading="lazy" width="600" height="400">
+                <figcaption>Salt Lake Temple</figcaption>
+            </figure>
+            <figure data-built="2016" data-area="85084">
+                <img src="images/provo.jpg" alt="Provo City Center Temple in Utah" loading="lazy" width="600"
+                    height="400">
+                <figcaption>Provo City Center Temple</figcaption>
+            </figure>
+            <figure data-built="1846" data-area="54000">
+                <img src="images/nauvoo.webp" alt="Nauvoo Illinois Temple" loading="lazy" width="600" height="400">
+                <figcaption>Nauvoo Illinois Temple</figcaption>
+            </figure>
+            <figure data-built="1974" data-area="160000">
+                <img src="images/washington.jpg" alt="Washington DC Temple" loading="lazy" width="600" height="400">
+                <figcaption>Washington D.C. Temple</figcaption>
+            </figure>
+            <figure data-built="1956" data-area="190614">
+                <img src="images/los-angeles.jpg" alt="Los Angeles California Temple" loading="lazy" width="600"
+                    height="400">
+                <figcaption>Los Angeles California Temple</figcaption>
+            </figure>
+            <figure data-built="1983" data-area="116642">
+                <img src="images/mexico-city.webp" alt="Mexico City Mexico Temple" loading="lazy" width="600"
+                    height="400">
+                <figcaption>Mexico City Mexico Temple</figcaption>
+            </figure>
+            <figure data-built="1958" data-area="42652">
+                <img src="images/london.webp" alt="London England Temple" loading="lazy" width="600" height="400">
+                <figcaption>London England Temple</figcaption>
+            </figure>
+            <figure data-built="1984" data-area="30677">
+                <img src="images/sydney.webp" alt="Sydney Australia Temple" loading="lazy" width="600" height="400">
+                <figcaption>Sydney Australia Temple</figcaption>
+            </figure>
+            <figure data-built="1985" data-area="19184">
+                <img src="images/johannesburg.webp" alt="Johannesburg South Africa Temple" loading="lazy" width="600"
+                    height="400">
+                <figcaption>Johannesburg South Africa Temple</figcaption>
+            </figure>
+            <figure data-built="1980" data-area="33600">
+                <img src="images/tokyo.png" alt="Tokyo Japan Temple" loading="lazy" width="600" height="400">
+                <figcaption>Tokyo Japan Temple</figcaption>
+            </figure>
+            <figure data-built="2017" data-area="19673">
+                <img src="images/paris.png" alt="Paris France Temple" loading="lazy" width="600" height="400">
+                <figcaption>Paris France Temple</figcaption>
+            </figure>
+            <figure data-built="2019" data-area="41000">
+                <img src="images/rome.webp" alt="Rome Italy Temple" loading="lazy" width="600" height="400">
+                <figcaption>Rome Italy Temple</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> &nbsp;|&nbsp; Derick Shanana &nbsp;|&nbsp; Bulawayo, Zimbabwe</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+/* =====================
+   Larger View (min-width: 640px)
+   Applied via media attribute on the link tag
+   ===================== */
+
+/* Hide hamburger, show nav inline */
+#hamburger {
+    display: none;
+}
+
+.navigation {
+    display: flex !important;
+    flex-direction: row;
+    width: auto;
+    background-color: transparent;
+    flex: 1;
+    justify-content: flex-end;
+    gap: 0.25rem;
+}
+
+.navigation a {
+    border-bottom: none;
+    border-radius: 6px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+}
+
+.navigation a:hover {
+    padding-left: 0.9rem;
+}
+
+/* Gallery: responsive auto-fit grid */
+.gallery {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+}
+
+figure img {
+    height: 220px;
+}
+
+main h1 {
+    margin-bottom: 2rem;
+}
