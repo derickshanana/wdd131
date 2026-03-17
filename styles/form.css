@@ -210,13 +210,14 @@ legend {
 
 /* =====================
    Star Rating
+   input + label siblings, displayed left to right
    ===================== */
 .star-rating {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    gap: 0.25rem;
+    flex-direction: row;
+    gap: 0.1rem;
     margin-top: 0.5rem;
+    align-items: center;
 }
 
 .star-rating input[type="radio"] {
@@ -224,6 +225,7 @@ legend {
     opacity: 0;
     width: 0;
     height: 0;
+    pointer-events: none;
 }
 
 .star-rating label {
@@ -233,17 +235,21 @@ legend {
     transition: color var(--transition), transform var(--transition);
     font-weight: 400;
     letter-spacing: 0;
-}
-
-.star-rating label:hover,
-.star-rating label:hover~label,
-.star-rating input:checked~label,
-.star-rating input:checked+label {
-    color: var(--color-star);
+    line-height: 1;
 }
 
 .star-rating label:hover {
+    color: var(--color-accent-light);
     transform: scale(1.2);
+}
+
+.star-rating input[type="radio"]:checked+label {
+    color: var(--color-star);
+}
+
+/* JS-assisted: .selected class added to labels up to clicked one */
+.star-rating label.selected {
+    color: var(--color-star);
 }
 
 /* =====================

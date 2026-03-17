@@ -46,3 +46,42 @@ products.forEach(product => {
 // =====================
 document.getElementById("currentyear").innerHTML = new Date().getFullYear();
 document.getElementById("lastModified").innerHTML = "Last Modified: " + document.lastModified;
+
+// =====================
+// Star Rating – highlight stars up to selected
+// =====================
+const starLabels = document.querySelectorAll(".star-rating label");
+const starInputs = document.querySelectorAll(".star-rating input[type='radio']");
+
+starLabels.forEach((label, index) => {
+    // Hover: highlight stars 0 through index
+    label.addEventListener("mouseenter", () => {
+        starLabels.forEach((l, i) => {
+            l.style.color = i <= index
+                ? "var(--color-accent-light)"
+                : "var(--color-star-empty)";
+        });
+    });
+
+    // Mouse leave: restore to selected state
+    label.addEventListener("mouseleave", () => {
+        highlightSelected();
+    });
+
+    // Click: mark selection
+    label.addEventListener("click", () => {
+        highlightSelected();
+    });
+});
+
+function highlightSelected() {
+    let selectedIndex = -1;
+    starInputs.forEach((input, i) => {
+        if (input.checked) selectedIndex = i;
+    });
+    starLabels.forEach((l, i) => {
+        l.style.color = i <= selectedIndex
+            ? "var(--color-star)"
+            : "var(--color-star-empty)";
+    });
+}
