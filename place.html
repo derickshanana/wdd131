@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zimbabwe – Country Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles/place.css" />
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>Zimbabwe</h1>
+    </header>
+
+    <!-- ===== HERO IMAGE ===== -->
+    <div class="hero">
+        <picture>
+            <!-- Wide screens: landscape photo -->
+            <source media="(min-width: 768px)" srcset="images/place-lg.webp" />
+            <!-- Mobile: portrait / square photo -->
+            <img src="images/place-sm.webp" alt="Victoria Falls, Zimbabwe" loading="eager" width="800" height="600" />
+        </picture>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- DATA CARD -->
+        <section class="card" id="data-section">
+            <h2>Data</h2>
+            <dl>
+                <dt>Area:</dt>
+                <dd>390,757 sq km</dd>
+                <dt>Population:</dt>
+                <dd>15,178,979</dd>
+                <dt>Capital:</dt>
+                <dd>Harare</dd>
+                <dt>Languages:</dt>
+                <dd>Shona, Ndebele, English</dd>
+                <dt>Currency:</dt>
+                <dd>Zimbabwe Gold (ZiG)</dd>
+                <dt>Time Zone:</dt>
+                <dd>UTC+2</dd>
+                <dt>Calling Code:</dt>
+                <dd>+263</dd>
+                <dt>Internet TLD:</dt>
+                <dd>.zw</dd>
+            </dl>
+        </section>
+
+        <!-- WEATHER CARD -->
+        <section class="card" id="weather-section">
+            <h2 class="weather-heading">Weather</h2>
+
+            <!-- SVG icon shown in mobile view only -->
+            <div class="weather-icon-mobile" aria-hidden="true">
+                <img src="images/weather-icon.svg" alt="Partly Cloudy" width="80" height="80" />
+            </div>
+
+            <dl>
+                <dt>Temperature:</dt>
+                <dd>28 °C</dd>
+                <dt>Conditions:</dt>
+                <dd>Partly Cloudy</dd>
+                <dt>Wind:</dt>
+                <dd>12 km/h</dd>
+                <dt>Wind Chill:</dt>
+                <dd id="wind-chill">--</dd>
+            </dl>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>
+            &copy;<span id="current-year"></span> &mdash; Zimbabwe Country Page &mdash; Created by [Derick Shanana]
+        </p>
+        <p>Last Modification: <span id="last-modified"></span></p>
+    </footer>
+
+</body>
+
+</html>

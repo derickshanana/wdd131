@@ -1,0 +1,224 @@
+/* ============================================================
+   CSS Custom Properties (Global Variables)
+   ============================================================ */
+:root {
+    /* Zimbabwe flag colours */
+    --clr-green: #006400;
+    --clr-yellow: #FFD200;
+    --clr-red: #CF0921;
+    --clr-black: #1a1a1a;
+    --clr-white: #ffffff;
+    --clr-bg: #f5f5f0;
+    --clr-card-bg: rgba(255, 255, 255, 0.92);
+    --clr-heading-bg: var(--clr-green);
+    --clr-heading-txt: var(--clr-white);
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Lato', sans-serif;
+
+    /* Spacing */
+    --gap: 1.25rem;
+    --card-radius: 6px;
+    --card-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--clr-bg);
+    color: var(--clr-black);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+header {
+    background-color: var(--clr-red);
+    /* Bottom stripe: yellow then green (mimics flag band) */
+    border-bottom: 6px solid var(--clr-green);
+    outline: 3px solid var(--clr-yellow);
+    outline-offset: -3px;
+    text-align: center;
+    padding: 1rem var(--gap);
+}
+
+header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 6vw, 3rem);
+    color: var(--clr-white);
+    letter-spacing: 0.04em;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* ============================================================
+   Hero Image
+   ============================================================ */
+.hero {
+    width: 100%;
+    max-height: 62vh;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================================
+   Main – MOBILE (single column, stacked cards)
+   ============================================================ */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding: var(--gap);
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   Cards
+   ============================================================ */
+.card {
+    background: var(--clr-card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.card h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    background-color: var(--clr-heading-bg);
+    color: var(--clr-heading-txt);
+    padding: 0.55rem 1rem;
+}
+
+/* ============================================================
+   Definition Lists (shared by Data & Weather)
+   ============================================================ */
+.card dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.35rem 0.6rem;
+    padding: 1rem 1.25rem;
+}
+
+.card dt {
+    font-weight: 700;
+    text-align: right;
+    color: var(--clr-black);
+    white-space: nowrap;
+}
+
+.card dd {
+    text-align: left;
+}
+
+/* ============================================================
+   Weather – SVG icon (mobile only)
+   ============================================================ */
+.weather-icon-mobile {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 0;
+}
+
+/* ============================================================
+   Weather heading – pseudo-element emoji icon (wide view only)
+   ============================================================ */
+/* Shown only in wide view – hidden in mobile via display:none on .weather-icon-mobile */
+.weather-heading::after {
+    content: '⛅';
+    display: none;
+    /* Hidden by default; shown at wide breakpoint */
+    margin-left: 0.5rem;
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+    background-color: var(--clr-red);
+    border-top: 6px solid var(--clr-green);
+    outline: 3px solid var(--clr-yellow);
+    outline-offset: -3px;
+    color: var(--clr-white);
+    text-align: center;
+    padding: 1.1rem var(--gap);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   WIDE VIEW – Media Query (≥ 768px)
+   ============================================================ */
+@media (min-width: 768px) {
+
+    /* Position cards over the hero image */
+    .hero {
+        position: relative;
+        max-height: 75vh;
+    }
+
+    main {
+        /* Overlay on top of hero */
+        position: relative;
+        margin-top: -420px;
+        /* pull main up to overlap hero */
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: var(--gap);
+        padding: var(--gap) 2rem 2rem;
+        z-index: 10;
+        pointer-events: none;
+        /* let clicks pass through transparent gap */
+    }
+
+    .card {
+        pointer-events: all;
+        max-width: 300px;
+        width: 100%;
+    }
+
+    /* Data card – left aligned */
+    #data-section {
+        align-self: flex-start;
+    }
+
+    /* Weather card – right / bottom aligned */
+    #weather-section {
+        align-self: flex-end;
+        margin-top: 200px;
+        /* push weather card lower on the image */
+    }
+
+    /* Hide mobile SVG icon in wide view */
+    .weather-icon-mobile {
+        display: none;
+    }
+
+    /* Show pseudo-element emoji on weather heading */
+    .weather-heading::after {
+        display: inline;
+    }
+}
