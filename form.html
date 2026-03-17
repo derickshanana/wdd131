@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form – WDD 131 – Derick Shanana</title>
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals – Derick Shanana – Submit a product review using this form.">
+    <meta name="author" content="Derick Shanana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="styles/form.css" rel="stylesheet">
+    <script src="scripts/form.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <span class="site-title">Product Review</span>
+        </div>
+    </header>
+
+    <main>
+        <h1>Share Your Experience</h1>
+        <p class="form-intro">Help others by reviewing a product you've used. Fields marked <span
+                class="required-mark">*</span> are required.</p>
+
+        <form method="get" action="review.html" id="review-form">
+
+            <!-- Product Name -->
+            <div class="form-group">
+                <label for="product-name">Product Name <span class="required-mark">*</span></label>
+                <select id="product-name" name="productName" required>
+                    <option value="" disabled selected>Select a Product ...</option>
+                    <!-- Options populated by JavaScript -->
+                </select>
+            </div>
+
+            <!-- Overall Rating -->
+            <div class="form-group">
+                <fieldset class="rating-fieldset">
+                    <legend>Overall Rating <span class="required-mark">*</span></legend>
+                    <div class="star-rating">
+                        <label for="rating-1" title="1 star">
+                            <input type="radio" id="rating-1" name="rating" value="1" required>
+                            <span>&#9733;</span>
+                        </label>
+                        <label for="rating-2" title="2 stars">
+                            <input type="radio" id="rating-2" name="rating" value="2">
+                            <span>&#9733;</span>
+                        </label>
+                        <label for="rating-3" title="3 stars">
+                            <input type="radio" id="rating-3" name="rating" value="3">
+                            <span>&#9733;</span>
+                        </label>
+                        <label for="rating-4" title="4 stars">
+                            <input type="radio" id="rating-4" name="rating" value="4">
+                            <span>&#9733;</span>
+                        </label>
+                        <label for="rating-5" title="5 stars">
+                            <input type="radio" id="rating-5" name="rating" value="5">
+                            <span>&#9733;</span>
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- Date of Installation -->
+            <div class="form-group">
+                <label for="install-date">Date of Installation <span class="required-mark">*</span></label>
+                <input type="date" id="install-date" name="installDate" required>
+            </div>
+
+            <!-- Useful Features -->
+            <div class="form-group">
+                <fieldset class="checkbox-fieldset">
+                    <legend>Useful Features <span class="hint">(check all that apply)</span></legend>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="feature-durability" name="features" value="durability">
+                            Durability
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="feature-ease-of-use" name="features" value="ease-of-use">
+                            Ease of Use
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="feature-performance" name="features" value="performance">
+                            Performance
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="feature-value" name="features" value="value-for-money">
+                            Value for Money
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="feature-design" name="features" value="design">
+                            Design &amp; Appearance
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="feature-support" name="features" value="customer-support">
+                            Customer Support
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- Written Review -->
+            <div class="form-group">
+                <label for="written-review">Written Review <span class="hint">(optional)</span></label>
+                <textarea id="written-review" name="writtenReview" rows="5"
+                    placeholder="Share details about your experience with this product..."></textarea>
+            </div>
+
+            <!-- User Name -->
+            <div class="form-group">
+                <label for="user-name">Your Name <span class="hint">(optional)</span></label>
+                <input type="text" id="user-name" name="userName" placeholder="e.g. Derick S.">
+            </div>
+
+            <!-- Submit -->
+            <div class="form-group form-submit">
+                <input type="submit" value="Submit Review">
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> &nbsp;|&nbsp; Derick Shanana &nbsp;|&nbsp; Bulawayo, Zimbabwe</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>

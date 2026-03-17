@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Confirmation – WDD 131 – Derick Shanana</title>
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals – Derick Shanana – Thank you for submitting your product review.">
+    <meta name="author" content="Derick Shanana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="styles/form.css" rel="stylesheet">
+    <script src="scripts/review.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <span class="site-title">Review Confirmation</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="confirmation-box">
+            <div class="confirmation-icon">&#10003;</div>
+            <h1>Thank You!</h1>
+            <p class="confirmation-msg">Your product review has been successfully submitted.</p>
+
+            <div class="review-summary" id="review-summary">
+                <!-- Populated by JavaScript from URL params -->
+            </div>
+
+            <div class="review-counter-box">
+                <p>Total reviews submitted from this device:</p>
+                <span id="review-count" class="review-count">0</span>
+            </div>
+
+            <a href="form.html" class="btn-back">&#8592; Submit Another Review</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> &nbsp;|&nbsp; Derick Shanana &nbsp;|&nbsp; Bulawayo, Zimbabwe</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>
