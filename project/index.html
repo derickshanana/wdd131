@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Zimbabwe Wild is your guide to Zimbabwe's breathtaking national parks and wildlife. Discover Hwange's elephants, Mana Pools' canoe safaris, Matobo's rhinos, and more.">
+    <meta name="author" content="Your Name">
+    <title>Zimbabwe Wild – National Parks &amp; Wildlife Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=Courier+Prime:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <!-- ============================================================
+       SITE HEADER
+  ============================================================= -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a href="index.html" class="site-logo" aria-label="Zimbabwe Wild – Home">
+                <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="21" cy="13" r="7" fill="#C8922A" />
+                    <ellipse cx="21" cy="27" rx="10" ry="7" fill="#F5EFE0" />
+                    <ellipse cx="13" cy="24" rx="4" ry="5.5" fill="#F5EFE0" />
+                    <rect x="15" y="32" width="3.5" height="6" rx="1.75" fill="#F5EFE0" />
+                    <rect x="20" y="32" width="3.5" height="6" rx="1.75" fill="#F5EFE0" />
+                    <rect x="25" y="30" width="3" height="6" rx="1.5" fill="#F5EFE0" />
+                    <path d="M9 24 Q5 28 7 34" stroke="#F5EFE0" stroke-width="2.5" stroke-linecap="round" fill="none" />
+                    <circle cx="12" cy="22" r="1.1" fill="#1E3A2F" />
+                </svg>
+                <div>
+                    <span class="logo-name">Zimbabwe Wild</span>
+                    <span class="logo-tagline">National Parks &amp; Wildlife</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav"
+                aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="site-nav" id="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="parks.html">Parks &amp; Wildlife</a></li>
+                    <li><a href="visit.html">Plan Your Visit</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- ============================================================
+       MAIN CONTENT
+  ============================================================= -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" aria-label="Hero banner">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-label">Zimbabwe's Wild Places</span>
+                    <h1>Where Africa's Wildlife Roams Free</h1>
+                    <p class="hero-lead">
+                        Explore Zimbabwe's magnificent national parks — from Hwange's vast elephant herds to
+                        Mana Pools' Zambezi riverfront. Authentic wilderness, waiting for you.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="parks.html" class="btn btn-primary">Explore Parks</a>
+                        <a href="visit.html" class="btn btn-outline">Plan Your Visit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section about-section" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="label-text">About Zimbabwe Wild</p>
+                        <h2 id="about-heading">A Wildlife Destination Like No Other</h2>
+                        <p>
+                            Zimbabwe is home to some of Africa's most spectacular wildlife and pristine wilderness.
+                            With 11 national parks covering more than 13% of the country, the diversity of
+                            habitats — from the Zambezi floodplains to the Eastern Highlands mist forests — is
+                            extraordinary.
+                        </p>
+                        <p>
+                            Whether you dream of watching elephants gather at a waterhole in Hwange, paddling a
+                            canoe past hippos on the Zambezi at Mana Pools, or tracking white rhinos on foot in
+                            the ancient granite kopjes of Matobo, Zimbabwe delivers unforgettable safari experiences
+                            with fewer crowds than many other African destinations.
+                        </p>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <span class="stat-number">11</span>
+                                <span class="stat-label">National Parks</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">350+</span>
+                                <span class="stat-label">Mammal Species</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">670+</span>
+                                <span class="stat-label">Bird Species</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1563460715825-b40f3f3ee674?auto=format&fit=crop&w=800&q=80"
+                            alt="Herd of African elephants walking through golden savanna grass in Zimbabwe"
+                            loading="lazy" width="800" height="420">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PARKS -->
+        <section class="section featured-parks-section" aria-labelledby="featured-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="label-text">Top Destinations</span>
+                    <h2 id="featured-heading">Featured National Parks</h2>
+                    <p>Three of Zimbabwe's most celebrated wildlife sanctuaries</p>
+                </div>
+
+                <div class="parks-preview-grid">
+
+                    <article class="park-card">
+                        <div class="park-card-image">
+                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80"
+                                alt="Large African elephant walking through the golden grasslands of Hwange National Park"
+                                loading="lazy" width="800" height="210">
+                            <span class="park-card-badge">Western Zimbabwe</span>
+                        </div>
+                        <div class="park-card-body">
+                            <h3>Hwange National Park</h3>
+                            <p class="park-desc">
+                                Zimbabwe's largest park is home to Africa's biggest elephant population —
+                                over 40,000 elephants roam its vast mopane woodlands and open pans.
+                            </p>
+                            <a href="parks.html#hwange" class="btn btn-ghost btn-sm">View Park</a>
+                        </div>
+                    </article>
+
+                    <article class="park-card">
+                        <div class="park-card-image">
+                            <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=800&q=80"
+                                alt="Wide Zambezi River surrounded by green floodplain trees at Mana Pools National Park"
+                                loading="lazy" width="800" height="210">
+                            <span class="park-card-badge">Northern Zimbabwe</span>
+                        </div>
+                        <div class="park-card-body">
+                            <h3>Mana Pools National Park</h3>
+                            <p class="park-desc">
+                                A UNESCO World Heritage Site famed for canoe safaris on the Zambezi and
+                                the rare privilege of walking freely among wildlife.
+                            </p>
+                            <a href="parks.html#mana-pools" class="btn btn-ghost btn-sm">View Park</a>
+                        </div>
+                    </article>
+
+                    <article class="park-card">
+                        <div class="park-card-image">
+                            <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80"
+                                alt="Ancient balancing granite boulders (kopjes) rising dramatically from the landscape at Matobo National Park"
+                                loading="lazy" width="800" height="210">
+                            <span class="park-card-badge">Southern Zimbabwe</span>
+                        </div>
+                        <div class="park-card-body">
+                            <h3>Matobo National Park</h3>
+                            <p class="park-desc">
+                                Ancient granite kopjes shelter Africa's densest leopard population and
+                                both black and white rhinoceros — trackable on foot.
+                            </p>
+                            <a href="parks.html#matobo" class="btn btn-ghost btn-sm">View Park</a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="text-center preview-cta">
+                    <a href="parks.html" class="btn btn-primary">View All Six Parks</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- WILDLIFE HIGHLIGHTS -->
+        <section class="section wildlife-section" aria-labelledby="wildlife-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="label-text">Wildlife</span>
+                    <h2 id="wildlife-heading">Iconic Animals of Zimbabwe</h2>
+                </div>
+                <div class="wildlife-grid">
+
+                    <div class="wildlife-card">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80"
+                            alt="African elephant, Zimbabwe's most iconic animal, at a waterhole" loading="lazy"
+                            width="600" height="400">
+                        <div class="wildlife-card-overlay">
+                            <span class="wildlife-animal-name">African Elephant</span>
+                            <span class="wildlife-status">Vulnerable · 40,000+ in Zimbabwe</span>
+                        </div>
+                    </div>
+
+                    <div class="wildlife-card">
+                        <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=600&q=80"
+                            alt="Male African lion resting in the golden savanna grass" loading="lazy" width="600"
+                            height="400">
+                        <div class="wildlife-card-overlay">
+                            <span class="wildlife-animal-name">African Lion</span>
+                            <span class="wildlife-status">Vulnerable · Found in Hwange &amp; Mana Pools</span>
+                        </div>
+                    </div>
+
+                    <div class="wildlife-card">
+                        <img src="https://images.unsplash.com/photo-1504173010664-32509107de0e?auto=format&fit=crop&w=600&q=80"
+                            alt="Burchell's zebras grazing together in Gonarezhou National Park" loading="lazy"
+                            width="600" height="400">
+                        <div class="wildlife-card-overlay">
+                            <span class="wildlife-animal-name">Burchell's Zebra</span>
+                            <span class="wildlife-status">Least Concern · Widespread across parks</span>
+                        </div>
+                    </div>
+
+                    <div class="wildlife-card">
+                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=600&q=80"
+                            alt="White rhinoceros in its natural habitat in Matobo National Park" loading="lazy"
+                            width="600" height="400">
+                        <div class="wildlife-card-overlay">
+                            <span class="wildlife-animal-name">White Rhinoceros</span>
+                            <span class="wildlife-status">Near Threatened · Matobo &amp; Hwange</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- VISIT CTA -->
+        <section class="visit-cta-section" aria-label="Plan your safari call to action">
+            <div class="container">
+                <h2>Ready to Experience Zimbabwe's Wild Places?</h2>
+                <p>
+                    Use our trip planning tool to choose the perfect park, discover the best season
+                    to visit, and customise activities to match your interests.
+                </p>
+                <a href="visit.html" class="btn btn-primary">Start Planning</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+       FOOTER
+  ============================================================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <span class="footer-brand-name">Zimbabwe Wild</span>
+                    <p>
+                        Your guide to Zimbabwe's extraordinary national parks, wildlife, and safari experiences.
+                        Explore responsibly and help protect these remarkable wild places for future generations.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="parks.html">Parks &amp; Wildlife</a></li>
+                        <li><a href="visit.html">Plan Your Visit</a></li>
+                        <li><a href="siteplan.html">Site Plan</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="references.html">References</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zimbabwe Wild &nbsp;&middot;&nbsp; WDD 131 Project</p>
+                <a href="references.html">References &amp; Image Credits</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Plan your Zimbabwe safari with our trip planner. Choose your national park, travel month, group size, and preferred activities. Your preferences are saved automatically.">
+    <meta name="author" content="Your Name">
+    <title>Plan Your Visit – Zimbabwe Wild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=Courier+Prime:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="site-logo" aria-label="Zimbabwe Wild – Home">
+                <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="21" cy="13" r="7" fill="#C8922A" />
+                    <ellipse cx="21" cy="27" rx="10" ry="7" fill="#F5EFE0" />
+                    <ellipse cx="13" cy="24" rx="4" ry="5.5" fill="#F5EFE0" />
+                    <rect x="15" y="32" width="3.5" height="6" rx="1.75" fill="#F5EFE0" />
+                    <rect x="20" y="32" width="3.5" height="6" rx="1.75" fill="#F5EFE0" />
+                    <rect x="25" y="30" width="3" height="6" rx="1.5" fill="#F5EFE0" />
+                    <path d="M9 24 Q5 28 7 34" stroke="#F5EFE0" stroke-width="2.5" stroke-linecap="round" fill="none" />
+                    <circle cx="12" cy="22" r="1.1" fill="#1E3A2F" />
+                </svg>
+                <div>
+                    <span class="logo-name">Zimbabwe Wild</span>
+                    <span class="logo-tagline">National Parks &amp; Wildlife</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav"
+                aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="site-nav" id="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="parks.html">Parks &amp; Wildlife</a></li>
+                    <li><a href="visit.html">Plan Your Visit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PAGE HERO -->
+        <section class="page-hero visit-page-hero" aria-label="Plan your visit hero">
+            <div class="container">
+                <h1>Plan Your Visit</h1>
+                <p>
+                    Tell us about your dream Zimbabwe safari — your park preferences, travel dates,
+                    and activities — and we will generate a personalised trip summary.
+                </p>
+            </div>
+        </section>
+
+        <!-- FORM SECTION -->
+        <section class="section visit-section" id="visit-form-section" aria-labelledby="form-heading">
+            <div class="container">
+
+                <div class="form-layout">
+
+                    <!-- SIDEBAR INFO -->
+                    <aside class="form-sidebar" aria-label="Trip planning information">
+                        <h3>Why Plan Ahead?</h3>
+                        <p>
+                            Zimbabwe's parks each have distinct peak seasons and limited accommodation.
+                            Planning early ensures you visit when wildlife is most active and accessible.
+                        </p>
+                        <ul class="sidebar-checklist" aria-label="Planning benefits">
+                            <li>Secure the best camps and lodges in advance</li>
+                            <li>Visit during the dry season for optimal wildlife viewing</li>
+                            <li>Match park choice to your preferred activities</li>
+                            <li>Allow time for permits (canoe safaris, walking safaris)</li>
+                            <li>Check road conditions for self-drive routes</li>
+                        </ul>
+                    </aside>
+
+                    <!-- FORM -->
+                    <div>
+                        <div class="saved-banner hidden" id="saved-banner" role="status">
+                            <span class="saved-banner-icon">&#10003;</span>
+                            <span>Your previously saved preferences have been restored.</span>
+                        </div>
+
+                        <form class="trip-form" id="trip-form" method="post" novalidate>
+
+                            <h2 id="form-heading" class="visually-hidden">Trip Enquiry Form</h2>
+
+                            <!-- PERSONAL DETAILS -->
+                            <div>
+                                <p class="form-section-title">Personal Details</p>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <input type="text" id="first-name" name="firstName" autocomplete="given-name"
+                                            placeholder="e.g. Thabo" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" id="last-name" name="lastName" autocomplete="family-name"
+                                            placeholder="e.g. Moyo">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="req"
+                                            aria-hidden="true">*</span></label>
+                                    <input type="email" id="email" name="email" autocomplete="email"
+                                        placeholder="your@email.com" required>
+                                    <span class="form-helper">We will not share your email with third parties.</span>
+                                </div>
+                            </div>
+
+                            <!-- TRIP DETAILS -->
+                            <div>
+                                <p class="form-section-title">Trip Details</p>
+                                <div class="form-group">
+                                    <label for="park-select">Preferred National Park <span class="req"
+                                            aria-hidden="true">*</span></label>
+                                    <select id="park-select" name="park" required>
+                                        <!-- Options populated by visit.js -->
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="travel-month">Preferred Travel Month <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <select id="travel-month" name="month" required>
+                                            <option value="">— Select month —</option>
+                                            <option value="january">January</option>
+                                            <option value="february">February</option>
+                                            <option value="march">March</option>
+                                            <option value="april">April</option>
+                                            <option value="may">May</option>
+                                            <option value="june">June</option>
+                                            <option value="july">July</option>
+                                            <option value="august">August</option>
+                                            <option value="september">September</option>
+                                            <option value="october">October</option>
+                                            <option value="november">November</option>
+                                            <option value="december">December</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="group-size">Group Size <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <input type="number" id="group-size" name="groupSize" min="1" max="50" value="2"
+                                            required>
+                                        <span class="form-helper">Number of travellers (1–50)</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="experience">Safari Experience Level</label>
+                                    <select id="experience" name="experience">
+                                        <option value="">— Select experience level —</option>
+                                        <option value="first">First safari — completely new to this</option>
+                                        <option value="few">A few visits — 2 to 4 previous safaris</option>
+                                        <option value="regular">Regular visitor — 5 or more safaris</option>
+                                        <option value="resident">Local / Resident</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- ACTIVITIES -->
+                            <fieldset class="activities-fieldset">
+                                <legend>Preferred Activities <span class="form-helper">(select all that apply)</span>
+                                </legend>
+                                <div class="checkbox-grid">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="activity" value="Game Drives">
+                                        Game Drives
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="activity" value="Walking Safaris">
+                                        Walking Safaris
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="activity" value="Canoe Safaris">
+                                        Canoe Safaris
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="activity" value="Birdwatching">
+                                        Birdwatching
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="activity" value="Photography">
+                                        Photography
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="activity" value="Night Drives">
+                                        Night Drives
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="activity" value="Rhino Tracking">
+                                        Rhino Tracking
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="activity" value="Fishing">
+                                        Fishing
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="activity" value="Hiking">
+                                        Hiking
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="activity" value="Horse Riding">
+                                        Horse Riding
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <!-- SPECIAL NOTES -->
+                            <div class="form-group">
+                                <label for="special-notes">Special Requirements or Questions</label>
+                                <textarea id="special-notes" name="notes"
+                                    placeholder="Dietary requirements, mobility considerations, specific wildlife you hope to see, or any other notes...">
+                </textarea>
+                            </div>
+
+                            <!-- ACTIONS -->
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save &amp; Generate Summary</button>
+                                <button type="button" class="btn-outline-dark" id="clear-btn">Clear Form</button>
+                                <p class="form-error" id="form-error" role="alert" aria-live="polite"></p>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TRIP SUMMARY (hidden until form submitted) -->
+        <section class="summary-section hidden" id="summary-section" aria-labelledby="summary-heading"
+            aria-live="polite">
+            <div class="container">
+                <div class="section-header">
+                    <span class="label-text">Trip Summary</span>
+                    <h2 id="summary-heading">Your Personalised Safari Plan</h2>
+                </div>
+                <div class="summary-card" id="summary-card">
+                    <!-- Populated by visit.js -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="footer-brand-name">Zimbabwe Wild</span>
+                    <p>
+                        Your guide to Zimbabwe's extraordinary national parks, wildlife, and safari experiences.
+                        Explore responsibly and help protect these remarkable wild places for future generations.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="parks.html">Parks &amp; Wildlife</a></li>
+                        <li><a href="visit.html">Plan Your Visit</a></li>
+                        <li><a href="siteplan.html">Site Plan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="references.html">References</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zimbabwe Wild &nbsp;&middot;&nbsp; WDD 131 Project</p>
+                <a href="references.html">References &amp; Image Credits</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/visit.js"></script>
+    <script>
+        // Clear button wires to the clearPreferences function defined in visit.js
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('clear-btn')?.addEventListener('click', clearPreferences);
+        });
+    </script>
+</body>
+
+</html>
