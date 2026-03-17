@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Plan – Zimbabwe Wild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=Courier+Prime:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* ============================================
+       CSS CUSTOM PROPERTIES – COLOR SCHEMA
+    ============================================ */
+        :root {
+            /* Primary Palette */
+            --color-earth: #5C3D1E;
+            /* Deep safari brown – headings, logo */
+            --color-savanna: #C8922A;
+            /* Golden savanna – accents, links, highlights */
+            --color-dusk: #1E3A2F;
+            /* Dark forest green – nav bar, section bands */
+            --color-mist: #F5EFE0;
+            /* Warm parchment – page background */
+            --color-stone: #8C7B6B;
+            /* Warm stone – secondary text, borders */
+            --color-sky: #3D7A8A;
+            /* Clear sky blue – special callouts */
+
+            /* Typography */
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Source Sans 3', sans-serif;
+            --font-mono: 'Courier Prime', monospace;
+
+            /* Spacing */
+            --space-xs: 0.4rem;
+            --space-sm: 0.8rem;
+            --space-md: 1.5rem;
+            --space-lg: 3rem;
+            --space-xl: 5rem;
+
+            --max-width: 860px;
+            --radius: 6px;
+        }
+
+        /* ============================================
+       RESET & BASE
+    ============================================ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.75;
+            background-color: var(--color-mist);
+            color: var(--color-earth);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: var(--color-savanna);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
+       SITE HEADER
+    ============================================ */
+        header {
+            background-color: var(--color-dusk);
+            color: var(--color-mist);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(255, 255, 255, 0.02) 20px,
+                    rgba(255, 255, 255, 0.02) 40px);
+        }
+
+        .logo-mark {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .logo-icon {
+            width: 54px;
+            height: 54px;
+            flex-shrink: 0;
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            font-weight: 800;
+            color: var(--color-savanna);
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+            position: relative;
+        }
+
+        .tagline {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(245, 239, 224, 0.65);
+            margin-top: var(--space-xs);
+            position: relative;
+        }
+
+        /* ============================================
+       NAV – TABLE OF CONTENTS
+    ============================================ */
+        nav {
+            background: var(--color-earth);
+            padding: var(--space-sm) var(--space-md);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm) var(--space-md);
+            justify-content: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: var(--color-mist);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            opacity: 0.85;
+            transition: opacity 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            color: var(--color-savanna);
+            text-decoration: none;
+        }
+
+        /* ============================================
+       MAIN LAYOUT
+    ============================================ */
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-lg) var(--space-md);
+        }
+
+        /* ============================================
+       SECTION STYLES
+    ============================================ */
+        .plan-section {
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid rgba(92, 61, 30, 0.15);
+        }
+
+        .plan-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-stone);
+            margin-bottom: var(--space-xs);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            font-weight: 800;
+            color: var(--color-dusk);
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-earth);
+            margin-bottom: var(--space-xs);
+        }
+
+        p {
+            margin-bottom: var(--space-sm);
+            color: #3a2e23;
+        }
+
+        .note {
+            font-size: 0.88rem;
+            color: var(--color-stone);
+            font-style: italic;
+        }
+
+        /* ============================================
+       SITE NAME SECTION
+    ============================================ */
+        .site-name-display {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            background: var(--color-dusk);
+            border-radius: var(--radius);
+            padding: var(--space-md) var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .site-name-display svg {
+            flex-shrink: 0;
+        }
+
+        .site-name-text h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-savanna);
+            margin: 0;
+        }
+
+        .site-name-text span {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: rgba(245, 239, 224, 0.6);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+       COLOR SWATCHES
+    ============================================ */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .swatch {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .swatch-color {
+            height: 80px;
+        }
+
+        .swatch-info {
+            padding: var(--space-sm);
+            background: white;
+        }
+
+        .swatch-info strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--color-earth);
+        }
+
+        .swatch-info code {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--color-stone);
+        }
+
+        .swatch-info p {
+            font-size: 0.8rem;
+            color: var(--color-stone);
+            margin: var(--space-xs) 0 0;
+            line-height: 1.4;
+        }
+
+        /* ============================================
+       TYPOGRAPHY SPECIMENS
+    ============================================ */
+        .type-specimen {
+            background: white;
+            border: 1px solid rgba(92, 61, 30, 0.1);
+            border-radius: var(--radius);
+            padding: var(--space-md);
+            margin-bottom: var(--space-sm);
+        }
+
+        .type-specimen .meta {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-stone);
+            margin-bottom: var(--space-xs);
+        }
+
+        .type-heading-sample {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--color-dusk);
+            line-height: 1.1;
+        }
+
+        .type-body-sample {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: #3a2e23;
+            line-height: 1.75;
+        }
+
+        .type-mono-sample {
+            font-family: var(--font-mono);
+            font-size: 0.92rem;
+            color: var(--color-earth);
+            letter-spacing: 0.05em;
+        }
+
+        /* ============================================
+       SCENARIOS
+    ============================================ */
+        .scenario-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .scenario-list li {
+            background: white;
+            border-left: 4px solid var(--color-savanna);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: var(--space-sm) var(--space-md);
+            font-style: italic;
+            color: var(--color-earth);
+            font-size: 1.02rem;
+        }
+
+        .scenario-list li::before {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--color-savanna);
+            line-height: 0;
+            vertical-align: -0.35em;
+            margin-right: 4px;
+        }
+
+        /* ============================================
+       WIREFRAMES
+    ============================================ */
+        .wireframe-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        @media (max-width: 600px) {
+            .wireframe-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .wireframe-card {
+            border: 1px solid rgba(92, 61, 30, 0.2);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .wireframe-label {
+            background: var(--color-stone);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            text-align: center;
+        }
+
+        .wireframe-card svg {
+            width: 100%;
+            height: auto;
+            background: #f0eadf;
+        }
+
+        /* ============================================
+       PAGE LIST
+    ============================================ */
+        .page-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--space-sm);
+        }
+
+        .page-list li {
+            background: white;
+            border: 1px solid rgba(92, 61, 30, 0.12);
+            border-top: 3px solid var(--color-dusk);
+            border-radius: 0 0 var(--radius) var(--radius);
+            padding: var(--space-sm) var(--space-md);
+        }
+
+        .page-list li strong {
+            display: block;
+            color: var(--color-dusk);
+            font-size: 0.95rem;
+        }
+
+        .page-list li span {
+            font-size: 0.82rem;
+            color: var(--color-stone);
+        }
+
+        /* ============================================
+       FOOTER
+    ============================================ */
+        footer {
+            background: var(--color-dusk);
+            color: rgba(245, 239, 224, 0.6);
+            text-align: center;
+            padding: var(--space-md);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+        }
+
+        footer a {
+            color: var(--color-savanna);
+        }
+
+        /* ============================================
+       RESPONSIVE
+    ============================================ */
+        @media (max-width: 600px) {
+            .site-name-display {
+                flex-direction: column;
+                text-align: center;
+                padding: var(--space-md);
+            }
+
+            .color-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================
+       SITE HEADER
+  ============================= -->
+    <header>
+        <div class="logo-mark">
+            <!-- SVG Logo: Elephant silhouette with sun -->
+            <svg class="logo-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <circle cx="27" cy="27" r="27" fill="#C8922A" opacity="0.15" />
+                <circle cx="27" cy="17" r="8" fill="#C8922A" />
+                <!-- Elephant body -->
+                <ellipse cx="27" cy="34" rx="11" ry="8" fill="#F5EFE0" />
+                <ellipse cx="18" cy="31" rx="4" ry="6" fill="#F5EFE0" />
+                <rect x="20" y="40" width="4" height="7" rx="2" fill="#F5EFE0" />
+                <rect x="26" y="40" width="4" height="7" rx="2" fill="#F5EFE0" />
+                <rect x="32" y="38" width="3.5" height="7" rx="1.75" fill="#F5EFE0" />
+                <!-- Trunk -->
+                <path d="M14 31 Q10 35 12 40" stroke="#F5EFE0" stroke-width="3" stroke-linecap="round" fill="none" />
+                <!-- Eye -->
+                <circle cx="17" cy="29" r="1.2" fill="#1E3A2F" />
+            </svg>
+            <h1>Zimbabwe Wild</h1>
+        </div>
+        <p class="tagline">Website Planning Document &nbsp;·&nbsp; WDD 131 Project</p>
+    </header>
+
+    <!-- ============================
+       NAVIGATION (TOC)
+  ============================= -->
+    <nav aria-label="Table of Contents">
+        <ul>
+            <li><a href="#site-name">Site Name</a></li>
+            <li><a href="#site-purpose">Purpose</a></li>
+            <li><a href="#scenarios">Scenarios</a></li>
+            <li><a href="#color-schema">Colors</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#pages">Pages</a></li>
+            <li><a href="#wireframes">Wireframes</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================
+       MAIN CONTENT
+  ============================= -->
+    <main>
+
+        <!-- 1. SITE NAME -->
+        <section class="plan-section" id="site-name">
+            <p class="section-label">Section 01</p>
+            <h2>Site Name</h2>
+
+            <div class="site-name-display">
+                <svg width="48" height="48" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <circle cx="27" cy="17" r="8" fill="#C8922A" />
+                    <ellipse cx="27" cy="34" rx="11" ry="8" fill="#F5EFE0" />
+                    <ellipse cx="18" cy="31" rx="4" ry="6" fill="#F5EFE0" />
+                    <rect x="20" y="40" width="4" height="7" rx="2" fill="#F5EFE0" />
+                    <rect x="26" y="40" width="4" height="7" rx="2" fill="#F5EFE0" />
+                    <rect x="32" y="38" width="3.5" height="7" rx="1.75" fill="#F5EFE0" />
+                    <path d="M14 31 Q10 35 12 40" stroke="#F5EFE0" stroke-width="3" stroke-linecap="round"
+                        fill="none" />
+                    <circle cx="17" cy="29" r="1.2" fill="#1E3A2F" />
+                </svg>
+                <div class="site-name-text">
+                    <h3>Zimbabwe Wild</h3>
+                    <span>zimbabwewild.com &nbsp;·&nbsp; Proposed Domain</span>
+                </div>
+            </div>
+
+            <p>
+                <strong>Zimbabwe Wild</strong> is a name that is short, memorable, and instantly communicates the
+                subject matter —
+                Zimbabwe's remarkable untamed landscapes and wildlife. The word <em>Wild</em> carries double meaning: it
+                references
+                wilderness and wild animals, but also conveys the excitement and wonder that visitors experience in
+                Zimbabwe's national
+                parks. The name works well as a brand across digital platforms and is easy to recall.
+            </p>
+            <p class="note">Optional domain: zimbabwewild.com &nbsp;|&nbsp; Alternate: zim-wild.org</p>
+        </section>
+
+        <!-- 2. SITE PURPOSE -->
+        <section class="plan-section" id="site-purpose">
+            <p class="section-label">Section 02</p>
+            <h2>Site Purpose</h2>
+            <p>
+                <strong>Zimbabwe Wild</strong> is an informational website dedicated to showcasing Zimbabwe's national
+                parks and
+                wildlife reserves. It serves as a resource for travelers, wildlife enthusiasts, and conservation
+                advocates
+                who want to learn about Zimbabwe's natural heritage and plan meaningful visits.
+            </p>
+            <p>
+                The site will provide descriptive profiles of Zimbabwe's top national parks (Hwange, Mana Pools,
+                Gonarezhou,
+                Matobo Hills, and others), highlight the iconic and rare wildlife found in each park, and offer a
+                practical
+                trip-planning guide. Visitors can submit a trip inquiry form, save their park preferences using browser
+                storage,
+                and receive a personalized visit summary — all powered by JavaScript.
+            </p>
+            <p>
+                The site aims to bridge the gap in mainstream travel content by presenting Zimbabwe as a world-class
+                wildlife
+                destination, delivered with an authentic, locally informed perspective.
+            </p>
+        </section>
+
+        <!-- 3. SCENARIOS -->
+        <section class="plan-section" id="scenarios">
+            <p class="section-label">Section 03</p>
+            <h2>Scenarios</h2>
+            <p>The following questions represent the kinds of things a typical visitor — a traveler or wildlife
+                enthusiast — might ask when visiting Zimbabwe Wild:</p>
+            <ul class="scenario-list">
+                <li>Which national park in Zimbabwe offers the best chance of seeing elephants up close?</li>
+                <li>What is the best time of year to visit Zimbabwe for a safari, and which parks should I prioritize?
+                </li>
+                <li>How do I plan a trip to Mana Pools, and what activities are available there?</li>
+                <li>What endangered or rare animals can I see in Zimbabwe that I might not find elsewhere in Africa?
+                </li>
+            </ul>
+        </section>
+
+        <!-- 4. COLOR SCHEMA -->
+        <section class="plan-section" id="color-schema">
+            <p class="section-label">Section 04</p>
+            <h2>Color Schema</h2>
+            <p>
+                The palette is inspired by Zimbabwe's natural landscape — rich red-brown soils, golden savanna grass,
+                dense
+                forest green canopies, and the warm haze of a sunset over the bushveld. All colors on this document are
+                drawn
+                from this schema.
+            </p>
+
+            <div class="color-grid">
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background:#5C3D1E;"></div>
+                    <div class="swatch-info">
+                        <strong>Safari Brown</strong>
+                        <code>#5C3D1E</code>
+                        <p>Used for: headings (h1–h3), logo text, primary text on light backgrounds</p>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background:#C8922A;"></div>
+                    <div class="swatch-info">
+                        <strong>Golden Savanna</strong>
+                        <code>#C8922A</code>
+                        <p>Used for: links, call-to-action buttons, accent borders, logo highlight, hover states</p>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background:#1E3A2F;"></div>
+                    <div class="swatch-info">
+                        <strong>Forest Green</strong>
+                        <code>#1E3A2F</code>
+                        <p>Used for: navigation bar, footer, section headers, dark backgrounds on cards</p>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background:#F5EFE0;"></div>
+                    <div class="swatch-info">
+                        <strong>Warm Parchment</strong>
+                        <code>#F5EFE0</code>
+                        <p>Used for: page background, text on dark backgrounds, card backgrounds</p>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background:#8C7B6B;"></div>
+                    <div class="swatch-info">
+                        <strong>Warm Stone</strong>
+                        <code>#8C7B6B</code>
+                        <p>Used for: secondary/caption text, borders, dividers, metadata labels</p>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background:#3D7A8A;"></div>
+                    <div class="swatch-info">
+                        <strong>Clear Sky Blue</strong>
+                        <code>#3D7A8A</code>
+                        <p>Used for: callout boxes, informational highlights, form focus states</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. TYPOGRAPHY -->
+        <section class="plan-section" id="typography">
+            <p class="section-label">Section 05</p>
+            <h2>Typography</h2>
+            <p>Three fonts are used to create a distinctive, editorial identity that balances elegance with readability:
+            </p>
+
+            <div class="type-specimen">
+                <p class="meta">Font 1 — Playfair Display &nbsp;·&nbsp; Headings &amp; Display Text</p>
+                <p class="type-heading-sample">Zimbabwe's Wild Heart</p>
+                <p style="font-size:0.82rem; color:var(--color-stone); margin-top:0.4rem;">
+                    Usage: H1, H2, H3, section titles, park names, hero text. Weight 600 &amp; 800.
+                    Provides an editorial, distinguished character that befits the subject's grandeur.
+                </p>
+            </div>
+
+            <div class="type-specimen">
+                <p class="meta">Font 2 — Source Sans 3 &nbsp;·&nbsp; Body &amp; Paragraphs</p>
+                <p class="type-body-sample">
+                    Zimbabwe is home to over 350 mammal species, including the iconic African elephant, lion, leopard,
+                    Cape buffalo, and white rhinoceros — the "Big Five." Its national parks preserve some of the most
+                    pristine ecosystems on the African continent.
+                </p>
+                <p style="font-size:0.82rem; color:var(--color-stone); margin-top:0.5rem;">
+                    Usage: All body paragraphs, navigation links, form labels, list items. Weight 300, 400 &amp; 600.
+                    Highly legible and optimised for screen reading at all sizes.
+                </p>
+            </div>
+
+            <div class="type-specimen">
+                <p class="meta">Font 3 — Courier Prime &nbsp;·&nbsp; Labels, Metadata &amp; Code</p>
+                <p class="type-mono-sample">NATIONAL PARK &nbsp;·&nbsp; EST. 1928 &nbsp;·&nbsp; HWANGE, ZIMBABWE</p>
+                <p style="font-size:0.82rem; color:var(--color-stone); margin-top:0.5rem;">
+                    Usage: Section labels, captions, tags, dates, coordinates, form helper text. Weight 400 &amp; 700.
+                    Adds an authentic field-notes aesthetic.
+                </p>
+            </div>
+        </section>
+
+        <!-- 6. PAGES -->
+        <section class="plan-section" id="pages">
+            <p class="section-label">Section 06</p>
+            <h2>Pages &amp; Structure</h2>
+            <p>The website will consist of at least three pages with consistent navigation and visual theme:</p>
+            <ul class="page-list">
+                <li>
+                    <strong>index.html — Home</strong>
+                    <span>Hero banner, site introduction, featured park highlights, call-to-action to explore
+                        parks.</span>
+                </li>
+                <li>
+                    <strong>parks.html — Parks &amp; Wildlife</strong>
+                    <span>Dynamic park cards generated from a JavaScript array of objects. Filter and favorites
+                        features.</span>
+                </li>
+                <li>
+                    <strong>visit.html — Plan Your Visit</strong>
+                    <span>HTML form for trip inquiry (park, group size, travel month, contact). LocalStorage saves
+                        preferences. JS renders a summary.</span>
+                </li>
+                <li>
+                    <strong>references.html — References</strong>
+                    <span>Unstyled page listing all image and text sources. Linked in footer.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 7. WIREFRAMES -->
+        <section class="plan-section" id="wireframes">
+            <p class="section-label">Section 07</p>
+            <h2>Wireframes — Home Page</h2>
+            <p>Low-fidelity wireframes showing the layout relationship of content blocks for mobile (portrait) and
+                desktop views of the home page:</p>
+
+            <div class="wireframe-grid">
+
+                <!-- MOBILE WIREFRAME -->
+                <div class="wireframe-card">
+                    <p class="wireframe-label">Mobile — 375px</p>
+                    <svg viewBox="0 0 200 440" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-label="Mobile wireframe layout">
+                        <!-- BG -->
+                        <rect width="200" height="440" fill="#f0eadf" />
+
+                        <!-- Header bar -->
+                        <rect x="0" y="0" width="200" height="28" fill="#1E3A2F" />
+                        <rect x="10" y="9" width="70" height="10" rx="2" fill="#C8922A" opacity="0.8" />
+                        <rect x="160" y="9" width="28" height="10" rx="2" fill="#F5EFE0" opacity="0.4" />
+
+                        <!-- Hero image block -->
+                        <rect x="0" y="28" width="200" height="90" fill="#8C7B6B" opacity="0.35" />
+                        <rect x="10" y="52" width="100" height="12" rx="2" fill="#1E3A2F" opacity="0.6" />
+                        <rect x="10" y="70" width="140" height="8" rx="2" fill="#1E3A2F" opacity="0.35" />
+                        <rect x="10" y="84" width="60" height="16" rx="3" fill="#C8922A" opacity="0.8" />
+
+                        <!-- Section title -->
+                        <rect x="10" y="132" width="80" height="10" rx="2" fill="#5C3D1E" opacity="0.7" />
+
+                        <!-- Park cards stacked -->
+                        <rect x="10" y="150" width="180" height="55" rx="3" fill="white" opacity="0.85" />
+                        <rect x="10" y="150" width="60" height="55" rx="3" fill="#8C7B6B" opacity="0.3" />
+                        <rect x="78" y="157" width="90" height="8" rx="2" fill="#1E3A2F" opacity="0.5" />
+                        <rect x="78" y="171" width="100" height="6" rx="2" fill="#8C7B6B" opacity="0.4" />
+                        <rect x="78" y="181" width="80" height="6" rx="2" fill="#8C7B6B" opacity="0.3" />
+                        <rect x="78" y="193" width="50" height="7" rx="2" fill="#C8922A" opacity="0.6" />
+
+                        <rect x="10" y="213" width="180" height="55" rx="3" fill="white" opacity="0.85" />
+                        <rect x="10" y="213" width="60" height="55" rx="3" fill="#8C7B6B" opacity="0.3" />
+                        <rect x="78" y="220" width="90" height="8" rx="2" fill="#1E3A2F" opacity="0.5" />
+                        <rect x="78" y="234" width="100" height="6" rx="2" fill="#8C7B6B" opacity="0.4" />
+                        <rect x="78" y="244" width="80" height="6" rx="2" fill="#8C7B6B" opacity="0.3" />
+                        <rect x="78" y="256" width="50" height="7" rx="2" fill="#C8922A" opacity="0.6" />
+
+                        <rect x="10" y="276" width="180" height="55" rx="3" fill="white" opacity="0.85" />
+                        <rect x="10" y="276" width="60" height="55" rx="3" fill="#8C7B6B" opacity="0.3" />
+                        <rect x="78" y="283" width="90" height="8" rx="2" fill="#1E3A2F" opacity="0.5" />
+                        <rect x="78" y="297" width="100" height="6" rx="2" fill="#8C7B6B" opacity="0.4" />
+                        <rect x="78" y="307" width="80" height="6" rx="2" fill="#8C7B6B" opacity="0.3" />
+                        <rect x="78" y="319" width="50" height="7" rx="2" fill="#C8922A" opacity="0.6" />
+
+                        <!-- CTA Button -->
+                        <rect x="50" y="345" width="100" height="22" rx="4" fill="#C8922A" opacity="0.8" />
+                        <rect x="65" y="350" width="70" height="8" rx="2" fill="white" opacity="0.7" />
+
+                        <!-- Footer -->
+                        <rect x="0" y="410" width="200" height="30" fill="#1E3A2F" />
+                        <rect x="30" y="421" width="140" height="6" rx="2" fill="#F5EFE0" opacity="0.25" />
+                    </svg>
+                </div>
+
+                <!-- DESKTOP WIREFRAME -->
+                <div class="wireframe-card">
+                    <p class="wireframe-label">Desktop — 1024px+</p>
+                    <svg viewBox="0 0 320 440" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-label="Desktop wireframe layout">
+                        <!-- BG -->
+                        <rect width="320" height="440" fill="#f0eadf" />
+
+                        <!-- Header / Nav bar -->
+                        <rect x="0" y="0" width="320" height="28" fill="#1E3A2F" />
+                        <rect x="12" y="9" width="60" height="10" rx="2" fill="#C8922A" opacity="0.8" />
+                        <rect x="160" y="10" width="28" height="8" rx="2" fill="#F5EFE0" opacity="0.3" />
+                        <rect x="196" y="10" width="28" height="8" rx="2" fill="#F5EFE0" opacity="0.3" />
+                        <rect x="232" y="10" width="28" height="8" rx="2" fill="#F5EFE0" opacity="0.3" />
+                        <rect x="268" y="10" width="40" height="8" rx="2" fill="#C8922A" opacity="0.6" />
+
+                        <!-- Hero – full width -->
+                        <rect x="0" y="28" width="320" height="120" fill="#8C7B6B" opacity="0.3" />
+                        <!-- Hero text overlay (left-aligned) -->
+                        <rect x="20" y="55" width="130" height="16" rx="2" fill="#1E3A2F" opacity="0.7" />
+                        <rect x="20" y="77" width="170" height="10" rx="2" fill="#1E3A2F" opacity="0.35" />
+                        <rect x="20" y="95" width="80" height="20" rx="4" fill="#C8922A" opacity="0.85" />
+
+                        <!-- Section label + title -->
+                        <rect x="20" y="164" width="60" height="7" rx="2" fill="#8C7B6B" opacity="0.5" />
+                        <rect x="20" y="175" width="100" height="12" rx="2" fill="#5C3D1E" opacity="0.65" />
+
+                        <!-- 3-column park cards -->
+                        <!-- Card 1 -->
+                        <rect x="20" y="198" width="85" height="110" rx="3" fill="white" opacity="0.85" />
+                        <rect x="20" y="198" width="85" height="45" rx="3" fill="#8C7B6B" opacity="0.35" />
+                        <rect x="26" y="250" width="60" height="8" rx="2" fill="#1E3A2F" opacity="0.5" />
+                        <rect x="26" y="263" width="65" height="5" rx="2" fill="#8C7B6B" opacity="0.35" />
+                        <rect x="26" y="272" width="55" height="5" rx="2" fill="#8C7B6B" opacity="0.25" />
+                        <rect x="26" y="284" width="38" height="8" rx="2" fill="#C8922A" opacity="0.65" />
+                        <!-- Card 2 -->
+                        <rect x="118" y="198" width="85" height="110" rx="3" fill="white" opacity="0.85" />
+                        <rect x="118" y="198" width="85" height="45" rx="3" fill="#8C7B6B" opacity="0.35" />
+                        <rect x="124" y="250" width="60" height="8" rx="2" fill="#1E3A2F" opacity="0.5" />
+                        <rect x="124" y="263" width="65" height="5" rx="2" fill="#8C7B6B" opacity="0.35" />
+                        <rect x="124" y="272" width="55" height="5" rx="2" fill="#8C7B6B" opacity="0.25" />
+                        <rect x="124" y="284" width="38" height="8" rx="2" fill="#C8922A" opacity="0.65" />
+                        <!-- Card 3 -->
+                        <rect x="216" y="198" width="84" height="110" rx="3" fill="white" opacity="0.85" />
+                        <rect x="216" y="198" width="84" height="45" rx="3" fill="#8C7B6B" opacity="0.35" />
+                        <rect x="222" y="250" width="60" height="8" rx="2" fill="#1E3A2F" opacity="0.5" />
+                        <rect x="222" y="263" width="65" height="5" rx="2" fill="#8C7B6B" opacity="0.35" />
+                        <rect x="222" y="272" width="55" height="5" rx="2" fill="#8C7B6B" opacity="0.25" />
+                        <rect x="222" y="284" width="38" height="8" rx="2" fill="#C8922A" opacity="0.65" />
+
+                        <!-- CTA Banner -->
+                        <rect x="0" y="324" width="320" height="60" fill="#5C3D1E" opacity="0.12" />
+                        <rect x="90" y="336" width="140" height="11" rx="2" fill="#5C3D1E" opacity="0.4" />
+                        <rect x="120" y="354" width="80" height="18" rx="4" fill="#C8922A" opacity="0.8" />
+
+                        <!-- Footer -->
+                        <rect x="0" y="400" width="320" height="40" fill="#1E3A2F" />
+                        <rect x="30" y="410" width="80" height="7" rx="2" fill="#F5EFE0" opacity="0.25" />
+                        <rect x="130" y="410" width="60" height="7" rx="2" fill="#F5EFE0" opacity="0.2" />
+                        <rect x="210" y="410" width="80" height="7" rx="2" fill="#F5EFE0" opacity="0.2" />
+                        <rect x="80" y="424" width="160" height="6" rx="2" fill="#F5EFE0" opacity="0.15" />
+                    </svg>
+                </div>
+
+            </div><!-- /wireframe-grid -->
+        </section>
+
+    </main>
+
+    <!-- ============================
+       FOOTER
+  ============================= -->
+    <footer>
+        <p>Zimbabwe Wild &nbsp;·&nbsp; WDD 131 Site Plan &nbsp;·&nbsp; &copy; 2025</p>
+        <p style="margin-top:0.3rem;">
+            <a href="references.html">References Page</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
