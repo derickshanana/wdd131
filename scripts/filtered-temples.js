@@ -8,35 +8,35 @@ const temples = [
         location: "Aba, Nigeria",
         dedicated: "2005, August, 7",
         area: 11500,
-        imageUrl: "images/johannesburg.webp"
+        imageUrl: "images/aba.jpg"
     },
     {
         templeName: "Manti Utah",
         location: "Manti, Utah, United States",
         dedicated: "1888, May, 21",
         area: 74792,
-        imageUrl: "images/salt-lake.webp"
+        imageUrl: "images/manti.png"
     },
     {
         templeName: "Payson Utah",
         location: "Payson, Utah, United States",
         dedicated: "2015, June, 7",
         area: 96630,
-        imageUrl: "images/provo.webp"
+        imageUrl: "images/provo.jpg"
     },
     {
         templeName: "Yigo Guam",
         location: "Yigo, Guam",
         dedicated: "2020, May, 2",
         area: 6861,
-        imageUrl: "images/tokyo.webp"
+        imageUrl: "images/guam.jpg"
     },
     {
         templeName: "Washington D.C.",
         location: "Kensington, Maryland, United States",
         dedicated: "1974, November, 19",
         area: 156558,
-        imageUrl: "images/washington-dc.webp"
+        imageUrl: "images/washington.jpg"
     },
     {
         templeName: "Lima Perú",
@@ -57,7 +57,7 @@ const temples = [
         location: "Salt Lake City, Utah, United States",
         dedicated: "1893, April, 6",
         area: 253015,
-        imageUrl: "images/salt-lake.webp"
+        imageUrl: "images/salt-lake.jpg"
     },
     {
         templeName: "London England",
@@ -71,7 +71,7 @@ const temples = [
         location: "Los Angeles, California, United States",
         dedicated: "1956, March, 11",
         area: 190614,
-        imageUrl: "images/los-angeles.webp"
+        imageUrl: "images/los-angeles.jpg"
     },
     {
         templeName: "Sydney Australia",
@@ -92,7 +92,7 @@ const temples = [
         location: "Tokyo, Japan",
         dedicated: "1980, October, 27",
         area: 33600,
-        imageUrl: "images/tokyo.webp"
+        imageUrl: "images/tokyo.png"
     },
     {
         templeName: "Paris France",
