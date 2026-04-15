@@ -43,7 +43,19 @@ function setActiveNavLink() {
     });
 }
 
+/**
+ * Populates the footer's dynamic year and last-modified date.
+ */
+function setFooterInfo() {
+    const yearEl = document.getElementById('currentyear');
+    const modifiedEl = document.getElementById('lastModified');
+
+    if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+    if (modifiedEl) { modifiedEl.textContent = `Last Modified: ${document.lastModified}`; }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initNavToggle();
     setActiveNavLink();
+    setFooterInfo();
 });

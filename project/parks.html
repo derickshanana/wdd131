@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Explore Zimbabwe's six major national parks including Hwange, Mana Pools, Gonarezhou, Matobo, Nyanga, and Zambezi. Learn about wildlife, activities, and best times to visit.">
-    <meta name="author" content="Your Name">
+    <meta name="author" content="Derick Shanana">
     <title>Parks &amp; Wildlife – Zimbabwe Wild</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,14 +142,19 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Zimbabwe Wild &nbsp;&middot;&nbsp; WDD 131 Project</p>
+                <p>&copy; <span id="currentyear"></span> &nbsp;|&nbsp; Derick Shanana &nbsp;|&nbsp; Bulawayo, Zimbabwe</p>
+                <p id="lastModified"></p>
                 <a href="references.html">References &amp; Image Credits</a>
             </div>
         </div>
     </footer>
-
+    
     <script src="scripts/main.js"></script>
     <script src="scripts/parks.js"></script>
-</body>
-
-</html>
+    <script>
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = 'Last Modified: ' + document.lastModified;
+    </script>
+    </body>
+    
+    </html>

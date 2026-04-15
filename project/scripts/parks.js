@@ -16,7 +16,7 @@ const parks = [
         regionLabel: 'Western Zimbabwe',
         size: '14,651 km²',
         established: '1929',
-        image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80',
+        image: '../project/images/hwange.jpg',
         imageAlt: 'Large African elephant herd at a waterhole in Hwange National Park',
         description: `Zimbabwe's largest national park and one of Africa's greatest wildlife sanctuaries. 
     Hwange is home to over 40,000 elephants — the largest elephant population on the continent — 
@@ -34,7 +34,7 @@ const parks = [
         regionLabel: 'Northern Zimbabwe',
         size: '2,196 km²',
         established: '1963',
-        image: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=800&q=80',
+        image: '../project/images/zambeziriver.jpg',
         imageAlt: 'Hippos resting on the banks of the Zambezi River at Mana Pools',
         description: `A UNESCO World Heritage Site along the Zambezi River, Mana Pools offers one of Africa's 
     most unique safari experiences. The park is celebrated for its canoe safaris, walking safaris 
@@ -52,7 +52,7 @@ const parks = [
         regionLabel: 'Southern Zimbabwe',
         size: '5,053 km²',
         established: '1975',
-        image: 'https://images.unsplash.com/photo-1504173010664-32509107de0e?auto=format&fit=crop&w=800&q=80',
+        image: '../project/images/gona.jpg',
         imageAlt: 'Zebras grazing on the open plains of Gonarezhou National Park',
         description: `Meaning "Place of Many Elephants" in Shona, Gonarezhou is the second-largest park 
     in Zimbabwe. Its iconic Chilojo Cliffs — dramatic red sandstone escarpments rising from the 
@@ -71,7 +71,7 @@ const parks = [
         regionLabel: 'Southern Zimbabwe',
         size: '424 km²',
         established: '1926',
-        image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80',
+        image: '../project/images/matopo.jpg',
         imageAlt: 'Dramatic balancing granite kopjes (boulders) at Matobo National Park near Bulawayo',
         description: `A UNESCO World Heritage Site defined by its ancient granite kopjes — massive 
     balancing boulders sculpted by millennia of weathering. Matobo has the highest concentration 
@@ -90,7 +90,7 @@ const parks = [
         regionLabel: 'Eastern Zimbabwe',
         size: '472 km²',
         established: '1941',
-        image: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=800&q=80',
+        image: '../project/images/inyanga.jpg',
         imageAlt: 'Mist-covered mountains and waterfalls in Nyanga National Park, Eastern Highlands',
         description: `The cool, misty Eastern Highlands offer a dramatic contrast to Zimbabwe's lowveld 
     parks. Nyanga is home to the 762-metre Mutarazi Falls — the second-tallest waterfall in Africa — 
@@ -109,7 +109,7 @@ const parks = [
         regionLabel: 'Western Zimbabwe',
         size: '568 km²',
         established: '1979',
-        image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=800&q=80',
+        image: '../project/images/zambezi.jpg',
         imageAlt: 'Aerial view of the Zambezi River landscape near Victoria Falls',
         description: `Bordering Victoria Falls — one of the Seven Natural Wonders of the World — 
     Zambezi National Park offers exceptional wildlife viewing in a spectacular riverine setting. 
